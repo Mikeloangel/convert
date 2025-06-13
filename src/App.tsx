@@ -10,8 +10,8 @@ import {
   CardContent,
   CircularProgress,
   Box,
+  Grid,
 } from '@mui/material';
-import Grid from '@mui/material/Grid'
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
 import axios from 'axios'
 
@@ -154,11 +154,11 @@ export default function App() {
       </Typography>
 
       <Grid container spacing={1}>
-        <Grid item xs={12} md={5}>
+        <Grid>
           {renderCurrencySection('Base Currency', source, true, setSource)}
         </Grid>
 
-        <Grid item xs={12} md={2} sx={{ textAlign: 'center' }}>
+        <Grid sx={{ textAlign: 'center' }}>
           <Button
             onClick={switchCurrencies}
             variant="outlined"
@@ -169,7 +169,7 @@ export default function App() {
           </Button>
         </Grid>
 
-        <Grid item xs={12} md={5}>
+        <Grid>
           {renderCurrencySection('Target Currency', target, false, setTarget)}
         </Grid>
       </Grid>
